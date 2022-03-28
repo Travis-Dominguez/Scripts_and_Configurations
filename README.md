@@ -59,18 +59,18 @@ A summary of the access policies in place can be found in the table below.
 Ansible was used to automate configuration of the ELK machine. 
 The configurations were not performed manually, which is advantageous because it creates documentation and allows efficient deployment of updated configurations. 
 The playbook implements the following tasks:
-- Updates the apt package and installs the following packages onto the elk server:
-	docker.io
-	python3-pip
+- Updates the apt package and installs the following packages onto the elk server: 
+	docker.io  
+	python3-pip 
 	Docker module
 - Sets RAM Swap level to 10
 - Increases machine's virutal memory usage to 262144
-- Downloads and launches elk container with the following paramaters:
-	always restarting
+- Downloads and launches elk container with the following paramaters: 
+	always restarting 
 	open ports 5601, 9200, and 5044.
 - Ensures docker service is enabled
 
-The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
+The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance. 
 Images/elk_container_status.png
 
 ### Target Machines & Beats
@@ -87,36 +87,40 @@ These Beats allow us to collect the following information from each machine:
 - MetricBeat collects various machine host stats. For example, it can give an overview of cpu usage, load, memory usage, and network traffic.
 - Filebeat collects log data for export. For example, system.log, wifi.log, and error.log events.  
 
-Screenshots displaying beats data after various network test are located below:
-Images/Wget_DOS_Test/Web-1_metrics_wget_DoS_test.png
-Images/Wget_DOS_Test/Web-2_metrics_wget_DoS_test.png
-Images/Wget_DOS_Test/Web-3_metrics_wget_DoS_test.png
+Screenshots displaying beats data after various network test are located below: 
+
+Images/Wget_DOS_Test/Web-1_metrics_wget_DoS_test.png 
+
+Images/Wget_DOS_Test/Web-2_metrics_wget_DoS_test.png 
+
+Images/Wget_DOS_Test/Web-3_metrics_wget_DoS_test.png 
+
 Images/ssh_login_attempts.png
 
 ### Using the Playbook
 In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned: 
 
--SSH into the control node.
+- SSH into the control node.
 
--Copy the playbook files in the github /Ansible folder to the Ansible directory on your control node. 
-/etc/ansible/roles
+- Copy the playbook files in the github /Ansible folder to the Ansible directory on your control node. 
+/etc/ansible/roles 
 (Note: You may need to create a roles directory to place all playbook files in).
 
--Update the Ansible ansible.config and hosts files to include your remote user, private IPs of the elk server and application servers, and IP group names. 
+- Update the Ansible 'ansible.config' and 'hosts' files to include your remote user, private IPs of the elk server and application servers, and IP group names. 
 (Note: Your elk-server and application servers would be under different IP group names)
-nano /etc/Ansible/hosts
-nano /etc/Ansible/ansible.config
+-nano /etc/Ansible/hosts
+-nano /etc/Ansible/ansible.config
 
--Verify that your playbook files have the corresponding IP group names and remote usernames that you updated in the hosts and ansible.config files).
-(Note 1: Install-elk.yml will install the elk container to your dedicated elk server, while filebeat-playbook.yml will install to the application servers).
-(Note 2: You may need to unplug the application servers from the backendpool in order to install Beat configurations on the application servers).
+- Verify that your playbook files have the corresponding IP group names and remote usernames that you updated in the hosts and ansible.config files). 
+(Note 1: Install-elk.yml will install the elk container to your dedicated elk server, while filebeat-playbook.yml will install to the application servers). 
+(Note 2: You may need to unplug the application servers from the backendpool in order to install Beat configurations on the application servers). 
 
--Run the playbooks
-ansible-playbook install-elk.yml
-ansible-playbook filebeat-playbook.yml
-ansible-playbook metricbeat-playbook.yml
+- Run the playbooks
+-ansible-playbook install-elk.yml
+-ansible-playbook filebeat-playbook.yml
+-ansible-playbook metricbeat-playbook.yml
 
--To verify the creation of the elk server go to your configured elk server's Public IP address using your browser
-http://<your.elk-vm.public.ip:5601/app/kibana
-(Note: make sure your browser is not blocking http traffic)
+- To verify the creation of the elk server go to your configured elk server's Public IP address using your browser: 
+http://<your.elk-vm.public.ip:5601/app/kibana 
+(Note: make sure your browser is not blocking http traffic) 
 
