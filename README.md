@@ -89,13 +89,13 @@ These Beats allow us to collect the following information from each machine:
 
 Screenshots displaying beats data after various network test are located below: 
 
-Images/Wget_DOS_Test/Web-1_metrics_wget_DoS_test.png 
+<img src="Images/Wget_DOS_Test/Web-1_metrics_wget_DoS_test.png"> 
 
-Images/Wget_DOS_Test/Web-2_metrics_wget_DoS_test.png 
+<img src="Images/Wget_DOS_Test/Web-2_metrics_wget_DoS_test.png"> 
 
-Images/Wget_DOS_Test/Web-3_metrics_wget_DoS_test.png 
+<img src="Images/Wget_DOS_Test/Web-3_metrics_wget_DoS_test.png"> 
 
-Images/ssh_login_attempts.png
+<img src="Images/ssh_login_attempts.png">
 
 ### Using the Playbook
 In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned: 
