@@ -1,4 +1,4 @@
-## Automated ELK Stack Deployment 
+## Useful Automation Snipets 
 
 RECONSTRUCTION
 
