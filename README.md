@@ -1,6 +1,6 @@
-## Useful Automation Snipets 
+## Usefull Automation Snipets 
 
-RECONSTRUCTION
+RECONSTRUCTION STATE
 
 <img src=".png">
 
