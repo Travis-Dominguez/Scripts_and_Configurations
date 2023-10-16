@@ -11,7 +11,7 @@ List of Scripts:
 
 - [Name] Comparing two sets of data and extracting the non matching values.
 
-- more...
+- [Name] Take data groups that overlap a set common element, in this case two common elements, and group uncommon elements from those groups together. 
 
   
 
